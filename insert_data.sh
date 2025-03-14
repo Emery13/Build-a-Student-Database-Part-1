@@ -14,7 +14,6 @@ do
 
     #if not found
     if [[ -z $MAJOR_ID ]]
-
     then
       #insert major 
       INSERT_MAJOR_RESULT=$($PSQL "INSERT INTO majors(major) VALUES('$MAJOR')")
@@ -73,13 +72,13 @@ do
 
     fi 
 
-  #insert student
-  INSERT_STUDENT_RESULT=$($PSQL "INSERT INTO students(first_name, last_name, major_id, gpa) VALUES('$FIRST', '$LAST', $MAJOR_ID, $GPA)")
+    #insert student
+    INSERT_STUDENT_RESULT=$($PSQL "INSERT INTO students(first_name, last_name, major_id, gpa) VALUES('$FIRST', '$LAST', $MAJOR_ID, $GPA)")
   
-  if [[ $INSERT_STUDENT_RESULT == "INSERT 0 1" ]]
-  then
-    echo "Inserted into students, $FIRST $LAST"
-  fi
+    if [[ $INSERT_STUDENT_RESULT == "INSERT 0 1" ]]
+    then
+      echo "Inserted into students, $FIRST $LAST"
+    fi
   
   fi
 done
