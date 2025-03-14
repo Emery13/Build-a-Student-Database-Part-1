@@ -79,6 +79,5 @@ do
     then
       echo "Inserted into students, $FIRST $LAST"
     fi
-  
   fi
 done
